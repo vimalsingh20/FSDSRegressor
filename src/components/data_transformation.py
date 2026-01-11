@@ -65,7 +65,7 @@ class DataTransformation:
                     logging.info("Error in Data Transformation")
                     raise CustomException(e,sys)    
     
-    def initaite_data_tranformation(self,train_path,test_path):
+    def initaite_data_transformation(self,train_path,test_path):
         try:
             train_df = pd.read_csv(train_path)
             test_df = pd.read_csv(test_path)
@@ -106,3 +106,4 @@ class DataTransformation:
         except Exception as e:
             logging.info("Exception occured in the initiate data_transformation") 
             raise CustomException(e,sys)          
+        
