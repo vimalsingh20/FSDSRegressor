@@ -24,7 +24,7 @@ class DataTransformation:
                     logging.info('Data Transformation initiated')
                     # Define which column should be ordinal-encoded and which should be sclaed 
                     categorical_cols= ['cut','color','clarity']
-                    numerical_cols= ['carat','depth','table','x','y','z']
+                    numerical_cols= ['carat','depth','table']
                     
                     #Define the custoim ranking for the each ordinal variable 
                     cut_categories = ['Fair','Good',"Very Good","Premium","Ideal"]    
@@ -78,7 +78,7 @@ class DataTransformation:
             preprocessing_obj = self.get_data_transformation_object()
             
             target_column_name ='price'
-            drop_columns=[target_column_name,'id']
+            drop_columns=[target_column_name,'id','x','y','z']
             
             input_feature_train_df= train_df.drop(columns=drop_columns,axis=1)
             target_feature_train_df= train_df[target_column_name]
